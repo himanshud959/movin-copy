@@ -1,0 +1,119 @@
+/* Main Container */
+.why-omp {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    position: relative;
+    text-align: center;
+}
+
+/* Heading Styling */
+.why-omp .heading {
+    font-size: 28px; /* Smaller size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000041; /* Dark blue color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 1; /* Ensure visibility */
+    transform: translateY(0); /* Reset any translation */
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animation for Heading */
+.why-omp .heading.show {
+    animation: slideIn 1.5s forwards; /* Apply animation when in view */
+}
+
+/* Dash Lines Before and After Heading */
+.why-omp .heading::before,
+.why-omp .heading::after {
+    content: "────────";
+    color: #000041; /* Dark blue color for the dash lines */
+    /* Adjust font size for visibility */
+    margin: 0 15px;
+    transition: color 0.3s ease; /* Transition for dash lines color */
+}
+
+/* Subheading Styling */
+.why-omp p.subheading {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Styling */
+.book-now-button {
+    background-color: #000041; /* Dark Blue */
+    color: #FFEE00; /* Yellow */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.book-now-button:hover {
+    background-color: #000041; /* Darker blue */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Highlighted Text */
+.highlight-dark {
+    color: #000041; /* Dark Blue */
+    font-weight: bold;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px); /* Start slightly above the viewport */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its original position */
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .why-omp {
+        padding: 30px 10px;
+    }
+
+    .why-omp .heading {
+        font-size: 1.8rem;
+    }
+
+    .why-omp p.subheading {
+        font-size: 1rem;
+    }
+
+    .book-now-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-omp .heading {
+        font-size: 1.6rem;
+    }
+
+    .why-omp p.subheading {
+        font-size: 0.9rem;
+    }
+
+    .book-now-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

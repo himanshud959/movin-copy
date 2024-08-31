@@ -91,7 +91,7 @@ const Header = ({
     },
     menuButton: {
       marginRight: 2,
-      color: '#121212',
+      color: '#FFEE00',
     },
   }
 
@@ -281,7 +281,7 @@ const Header = ({
   return (
     (!hidden && (
       <div style={classes.grow} className="header">
-        <AppBar position="relative" sx={{ bgcolor: '#fff', boxShadow: 'none', borderBottom: '1px solid #ddd' }}>
+        <AppBar position="relative" sx={{ bgcolor: '#000041', boxShadow: 'none', borderBottom: '1px solid #ddd' }}>
           <Toolbar className="toolbar">
             {isLoaded && !loading && (
               <>

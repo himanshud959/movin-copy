@@ -1,3 +1,111 @@
-.about {
-    padding: 15px;
+.about-section {
+    display: flex;
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center the content horizontally */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.about-columns {
+    display: flex;
+    flex-direction: column; /* Stack columns vertically by default */
+    justify-content: space-between;
+    width: 100%; /* Ensure the columns span the full width */
+    margin-bottom: 40px; /* Space between columns and button */
+}
+
+.about-column {
+    flex: 1;
+    margin: 10px 0;
+}
+
+.about-column h2 {
+    font-size: 24px;
+    /* color: #333; */
+    color: #b38839; /* Orange color for headings */
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative; /* To use for sliding */
+    overflow: hidden; /* Hide the text during animation */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: slide-in 1.5s ease-out forwards; /* Apply sliding animation */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%); /* Start from the left */
+    }
+    100% {
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+.about-column p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Adding space between About Us and Our Mission */
+.about-column:not(:last-child) {
+    margin-bottom: 30px; /* Add space below each column except the last one */
+}
+
+.about-button {
+    text-align: center;
+    width: 100%; /* Ensure the button container spans the full width */
+}
+
+.about-button button {
+    background-color: #000041; /* Dark blue background */
+    color: #FFEE00; /* Yellow text */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.about-button button:hover {
+    background-color: #031a30; /* Darker blue on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .about-columns {
+        flex-direction: row; /* Align columns side by side on larger screens */
+    }
+
+    .about-column {
+        margin: 0 10px;
+    }
+
+    /* Adjust space between columns for larger screens */
+    .about-column:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 20px; /* Space between the columns */
+    }
+
+    .about-column h2 {
+        font-size: 28px; /* Larger heading on tablets and up */
+        animation: slide-in 1.2s ease-out forwards; /* Faster sliding on larger screens */
+    }
+
+    .about-button button {
+        padding: 14px 24px; /* Slightly larger padding for button */
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-column h2 {
+        font-size: 32px; /* Even larger heading on desktops */
+        animation: slide-in 1s ease-out forwards; /* Even faster sliding on desktops */
+    }
+
+    .about-button button {
+        padding: 16px 28px; /* Even larger padding for button */
+        font-size: 18px; /* Larger font size for button text */
+    }
 }

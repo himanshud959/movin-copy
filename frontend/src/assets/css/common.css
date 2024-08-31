@@ -4,13 +4,15 @@
 }
 
 .btn-primary {
-  background-color: #0D63C9 !important;
-  color: #fff !important;
+  background-color: #000041 !important;
+  color:  #FFEE00 !important;
 }
 
 .btn-secondary {
-  background-color: #999 !important;
-  color: #fff !important;
+  /* background-color: #999 !important;
+  color: #fff !important; */
+  background-color: #000041 !important;
+  color:  #FFEE00 !important;
 }
 
 .btn-primary:hover,

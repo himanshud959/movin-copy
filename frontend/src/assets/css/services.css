@@ -1,0 +1,148 @@
+.services {
+    padding: 40px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000041; /* blue color */
+    position: relative;
+    opacity: 0;
+    transform: translateY(-50px); /* Start slightly above the viewport */
+    transition: transform 1.5s ease, opacity 1.5s ease; /* Smooth sliding effect */
+}
+
+.services-header h2.show {
+    transform: translateY(0); /* End at its original position */
+    opacity: 1; /* Fully visible */
+}
+
+.services-header h2::before,
+.services-header h2::after {
+    content: "────────";
+    color: #000041; /* blue color for the dash lines */
+    margin: 0 15px;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* .services-header h2:hover {
+    color: #ffee00; 
+}
+
+.services-header h2:hover::before,
+.services-header h2:hover::after {
+    color: #ffee00; 
+} */
+
+.services-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between service cards */
+}
+
+.service-card {
+    flex: 1 1 calc(33.33% - 40px); /* Three cards per row with spacing */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.service-card:hover {
+    background-color: #e0f7fa;
+    border-color: #00796b;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.service-name {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .service-card {
+        flex: 1 1 calc(33.33% - 20px); /* Adjust spacing for medium screens */
+    }
+
+    .services-grid {
+        gap: 15px; /* Adjust gap for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 20px;
+    }
+
+    .services-header h2 {
+        font-size: 24px;
+    }
+
+    .services-header p {
+        font-size: 14px;
+    }
+
+    .service-card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-header h2 {
+        font-size: 20px;
+    }
+
+    .services-header p {
+        font-size: 12px;
+    }
+
+    .services-grid {
+        flex-direction: column; /* Stack service cards vertically on small screens */
+        align-items: center;
+        gap: 10px; /* Adjust gap for small screens */
+    }
+
+    .service-card {
+        width: 100%; /* Full width on small screens */
+        max-width: none;
+    }
+}

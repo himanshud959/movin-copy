@@ -1,0 +1,137 @@
+.how-to-book {
+    padding: 40px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.how-to-book h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000041; /* Blue color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-50px); /* Start slightly above the viewport */
+    transition: color 0.10s ease; /* Transition for heading color */
+}
+
+.how-to-book h2.show {
+    animation: slideIn 1.5s forwards; /* Apply animation when in view */
+}
+
+.how-to-book h2::before,
+.how-to-book h2::after {
+    content: "────────";
+    color: #000041; /* Yellow color for the dash lines */
+    flex: 0;
+    margin: 0 15px;
+    transition: color 0.10s ease; /* Transition for dash lines color */
+}
+
+/* .how-to-book h2:hover {
+    color:#FFEE00; 
+}
+
+.how-to-book h2:hover::before,
+.how-to-book h2:hover::after {
+    color:#FFEE00; 
+} */
+
+.how-to-book p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between; /* Distribute space between steps */
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+}
+
+.step {
+    width: 100%; /* Default to full width on small screens */
+    max-width: 320px; /* Maximum width to prevent overly wide elements */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid transparent; /* Border for hover effect */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-bottom: 20px; /* Space between steps */
+}
+
+.step:hover {
+    background-color: #e0f7fa; /* Light blue background on hover */
+    border-color: #00796b; /* Darker border color on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.step h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.step p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px); /* Start slightly above the viewport */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its original position */
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .steps {
+        justify-content: center; /* Center align steps on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .how-to-book {
+        padding: 20px;
+    }
+
+    .how-to-book h2 {
+        font-size: 24px;
+    }
+
+    .how-to-book p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-to-book h2 {
+        font-size: 20px;
+    }
+
+    .how-to-book p {
+        font-size: 12px;
+    }
+
+    .steps {
+        flex-direction: column; /* Stack steps vertically on small screens */
+        align-items: center; /* Center align steps */
+    }
+
+    .step {
+        width: 90%; /* Reduce width for small screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+}

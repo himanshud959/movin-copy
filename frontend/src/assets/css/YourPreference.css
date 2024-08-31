@@ -1,0 +1,146 @@
+.your-preference {
+    padding: 40px;
+    background-color: #f9f9f9;
+    position: relative;
+    /* max-width: 80%; Ensures the section takes up 80% of the screen width */
+    margin: 0 auto; /* Centers the section horizontally */
+    opacity: 0;
+    transform: translateY(-50px); /* Start slightly above the viewport */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and position */
+}
+
+.your-preference.show {
+    animation: slideIn 1.5s forwards; /* Apply animation when in view */
+}
+
+.your-preference h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000041; /* dark blue color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.your-preference h2::before,
+.your-preference h2::after {
+    content: "────────";
+    color: #000041; /* blue color for the dash lines */
+    flex: 0;
+    margin: 0 15px;
+    transition: color 0.3s ease; /* Transition for dash lines color */
+}
+
+/* .your-preference h2:hover {
+    color: #FFEE00; 
+}
+
+.your-preference h2:hover::before,
+.your-preference h2:hover::after {
+    color: #FFEE00;
+} */
+
+.your-preference p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.preference-options {
+    display: flex;
+    justify-content: space-between; /* Distribute space between preferences */
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+}
+
+.preference-option {
+    width: 100%; /* Default to full width on small screens */
+    max-width: 320px; /* Maximum width to prevent overly wide elements */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid transparent; /* Border for hover effect */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-bottom: 20px; /* Space between preferences */
+}
+
+.preference-option:hover {
+    background-color: #e0f7fa; /* Light blue background on hover */
+    border-color: #00796b; /* Darker border color on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.preference-option h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.preference-option img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.preference-option p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px); /* Start slightly above the viewport */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at its original position */
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .preference-options {
+        justify-content: center; /* Center align preferences on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .your-preference {
+        padding: 20px;
+    }
+
+    .your-preference h2 {
+        font-size: 24px;
+    }
+
+    .your-preference p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .your-preference h2 {
+        font-size: 20px;
+    }
+
+    .your-preference p {
+        font-size: 12px;
+    }
+
+    .preference-options {
+        flex-direction: column; /* Stack preferences vertically on small screens */
+        align-items: center; /* Center align preferences */
+    }
+
+    .preference-option {
+        width: 90%; /* Reduce width for small screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+}

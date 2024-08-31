@@ -1,9 +1,62 @@
+
+
+/* General container styles */
 div.home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow: hidden auto;
+}
+
+/* Hero section styles */
+.hero-text {
+  text-align: center;
+  margin: 2rem 0;
+  z-index: 2; /* Ensures the text is above everything */
+  position: relative;
+}
+
+.hero-heading {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.hero-subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 0.5rem; /* Reduced margin-top to decrease space */
+}
+
+div.home div.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 107vh;
+  position: relative; /* Allows content to stack on top of the background image */
+}
+
+div.home div.home-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/cover-5.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  filter: blur(2px); /* Adds blur effect only to the background image */
+  z-index: 1; /* Places the background image behind the content */
+}
+/* Footer styles */
+.footer-copyright {
+  text-align: center;
+  font-size: 13px;
+  color: #FFEE00;
 }
 
 div.home footer {
@@ -14,199 +67,176 @@ div.home footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;
-  color: #70757a;
+  background: #000041;
+  color: #FFEE00;
   border-top: 1px solid #ebebeb;
+  z-index: 2; /* Ensures the footer is above the blurred background */
 }
 
-div.home footer div.copyright span.part1,
-div.home footer div.copyright span.part3 {
-  font-size: 12px;
-}
-
-div.home footer div.copyright span.part2 {
-  font-size: 10px;
-  position: relative;
-  top: -5px;
-}
-
-div.home div.home-content div.home-logo {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 180px;
+div.home footer div.secure-payment {
   display: none;
 }
 
-div.home div.home-content span.home-logo-main,
-div.home div.home-content span.home-logo-registered {
-  float: left;
-  color: #0D63C9;
-  opacity: 0.97;
+div.home footer div.secure-payment img {
+  max-width: 100px; /* Adjust size as needed */
+  display: block;
+  margin: 0 auto;
 }
 
-div.home div.home-content span.home-logo-main {
-  font-size: 80px;
-  font-weight: 700;
-  line-height: 135px;
-}
-
-div.home div.home-content span.home-logo-main::after {
-  content: "Movin' In";
-}
-
-div.home div.home-content span.home-logo-registered {
-  margin-top: 40px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-div.home div.home-content span.home-logo-registered::after {
-  content: '®';
-}
-
-div.home div.home-content div.home-search form.home-search-form {
-  display: table;
-  width: 100%;
-}
-
-div.home div.home-content div.home-search .btn-search {
-  display: table-cell;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 500;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  height: 52px;
-  margin: 0;
-  white-space: nowrap;
-  background: #0D63C9;
-  padding: 5px 32px;
-}
-
-div.home div.home-content div.home-search .btn-search:hover {
-  opacity: 0.95;
-}
-
-div.home div.home-content {
+/* Adjust search box dimensions */
+div.home div.home-content div.home-search {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-image: url(/cover.jpg);
-  background-size: cover;
-  background-position: center bottom;
-  width: 100%;
-  height: 107vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 50px;
+  padding: 20px 40px;
+  margin-top: 0rem;
+  z-index: 2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Device width is less than or equal to 960px */
+/* Tabs styles */
+.search-tabs {
+  display: flex;
+  background-color: transparent;
+  padding: 0px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
 
-@media only screen and (width <=960px) {
-  div.home div.home-content {
-    padding: 110px 0;
-  }
+.search-tabs .MuiTab-root {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000041;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-  div.home div.home-content div.home-logo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 140px;
-    display: none;
-  }
+.search-tabs .MuiTab-root:hover {
+  color: #000041;
+}
 
-  div.home div.home-content span.home-logo-main,
-  div.home div.home-content span.home-logo-registered {
-    float: left;
-    color: #0D63C9;
-    opacity: 0.97;
-  }
+/* Adjust form styling for tabs and tags */
+.home-search-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
 
-  div.home div.home-content span.home-logo-main {
-    font-size: 70px;
-    font-weight: 700;
-    line-height: 125px;
-  }
+/* Adjust input fields */
+.home-search-form .pickup-location,
+.home-search-form .from,
+.home-search-form .to,
+.home-search-form .months-dropdown {
+  margin-right: 0rem;
+  border-radius: 50px;
+  height: 45px;
+  padding: 0 5px;
+  flex-grow: 0;
+  /* border: 1px solid #9d0c0c; */
+}
 
-  div.home div.home-content div.home-search form.home-search-form {
-    display: grid;
-    width: 100%;
-    max-width: 480px;
-  }
+/* Dropdown specific styling */
+.home-search-form .months-dropdown select {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
 
-  div.home div.home-content div.home-search .pickup-location,
-  div.home div.home-content div.home-search .drop-off-location,
-  div.home div.home-content div.home-search .from,
-  div.home div.home-content div.home-search .to {
-    width: 100%;
-    padding: 10px;
-  }
+/* Adjust button styling */
+.home-search-form .btn-search {
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #FFEE00;
+  background: #000041;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1.2rem;
+}
 
+.home-search-form .btn-search:hover {
+  background-color: #000041;
+}
+
+/* Responsive styles for better mobile UX */
+@media only screen and (max-width: 768px) {
   div.home div.home-content div.home-search {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 30px);
-    background-color: #fff;
     padding: 20px;
-    border-radius: 20px;
-    margin: 10px 0;
+    width: 100%;
   }
 
-  div.home div.home-content div.home-search .btn-search {
-    margin: 10px;
+  .search-tabs {
+    flex-direction: column;
+    align-items: center;
   }
 
-  div.home footer div.secure-payment {
-    display: none;
+  .home-search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-search-form .pickup-location,
+  .home-search-form .from,
+  .home-search-form .to,
+  .home-search-form .months-dropdown {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+  }
+
+  .home-search-form .months-dropdown select {
+    height: 45px; /* Match height with other inputs */
+    border-radius: 50px;
+    text-align-last: center; /* Center text in dropdown */
+  }
+
+  .home-search-form .btn-search {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+}
+
+/* Enhanced styles for larger screens */
+@media only screen and (min-width: 960px) {
+  .home-search-form .pickup-location {
+    width: 35%;
+  }
+
+  .home-search-form .from,
+  .home-search-form .to,
+  .home-search-form .months-dropdown {
+    width: 25%;
+  }
+
+  .home-search-form .btn-search {
+    min-width: 150px;
   }
 }
 
 /* Device width is between 500px and 960px */
-
-@media only screen and (width >=500px) and (width <=960px) {
+@media only screen and (min-width: 500px) and (max-width: 960px) {
   div.home footer div.secure-payment {
     bottom: 0;
   }
 }
-
-/* Device width is greater than or equal to 960px */
-
-@media only screen and (width >=960px) {
-  div.home div.home-content div.home-search .pickup-location {
-    display: table-cell;
-    width: 350px;
-    padding-right: 2px;
-    padding-bottom: 10px;
-  }
-
-  div.home div.home-content div.home-search .drop-off-location {
-    display: table-row;
-    width: 350px;
-    height: 66px;
-  }
-
-  div.home div.home-content div.home-search .from,
-  div.home div.home-content div.home-search .to {
-    display: table-cell;
-    width: 235px;
-    padding: 0 2px;
-  }
-
-  div.home div.home-content div.home-search {
-    background-color: #fff;
-    display: block;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 6% 5%;
-  }
-
-  div.home div.home-content div.home-search .btn-search {
-    min-width: 190px;
-    margin-left: 7px;
-  }
-
-  div.home footer div.secure-payment {
+div.home footer div.secure-payment {
     position: absolute;
     right: 0;
     padding: 5px;
@@ -216,4 +246,6 @@ div.home div.home-content {
   div.home footer div.secure-payment img {
     height: 32px;
   }
-}
+
+
+  

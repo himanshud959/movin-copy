@@ -8,12 +8,13 @@ import {
   Link
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import * as movininTypes from ':movinin-types'
 import { strings as commonStrings } from '../lang/common'
 import { strings } from '../lang/sign-in'
 import * as UserService from '../services/UserService'
 import Error from '../components/Error'
 import Layout from '../components/Layout'
-import * as movininTypes from ':movinin-types'
+import SocialLogin from '../components/SocialLogin'
 
 import '../assets/css/signin.css'
 
@@ -24,7 +25,6 @@ const SignIn = () => {
   const [error, setError] = useState(false)
   const [visible, setVisible] = useState(false)
   const [blacklisted, setBlacklisted] = useState(false)
-  const [stayConnected, setStayConnected] = useState(false)
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
@@ -38,7 +38,11 @@ const SignIn = () => {
     try {
       e.preventDefault()
 
-      const data = { email, password, stayConnected }
+      const data: movininTypes.SignInPayload = {
+        email,
+        password,
+        stayConnected: UserService.getStayConnected()
+      }
 
       const res = await UserService.signin(data)
       if (res.status === 200) {
@@ -116,7 +120,7 @@ const SignIn = () => {
                   id="stay-connected"
                   type="checkbox"
                   onChange={(e) => {
-                    setStayConnected(e.currentTarget.checked)
+                    UserService.setStayConnected(e.currentTarget.checked)
                   }}
                 />
                 <label
@@ -129,6 +133,8 @@ const SignIn = () => {
               <div className="forgot-password">
                 <Link href="/forgot-password">{strings.RESET_PASSWORD}</Link>
               </div>
+
+              <SocialLogin />
 
               <div className="signin-buttons">
                 <Button variant="contained" size="small" href="/sign-up" className="btn-secondary btn-margin btn-margin-bottom">

@@ -23,7 +23,7 @@
 .about-column h2 {
     font-size: 24px;
     /* color: #333; */
-    color: #b38839; /* Orange color for headings */
+    color: #f2bd1d; /* Orange color for headings */
     margin-bottom: 10px;
     text-align: center;
     position: relative; /* To use for sliding */
@@ -43,7 +43,7 @@
 
 .about-column p {
     font-size: 16px;
-    color: #666;
+    color: #0a0a0a;
     line-height: 1.6;
     text-align: justify;
 }

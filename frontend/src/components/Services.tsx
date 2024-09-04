@@ -32,7 +32,7 @@ const Services: React.FC = () => {
       <div className="services-grid">
         {services.map((service, index) => (
           <div className="service-card" key={index}>
-            <img src={service.imgSrc} alt={service.name} className="service-icon" />
+            <img src={service.imgSrc} alt={String(service.name)} className="service-icon" />
             <p className="service-name">{service.name}</p>
           </div>
         ))}

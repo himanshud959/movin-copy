@@ -38,8 +38,14 @@ app.use(compression({ threshold: 0 }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 app.use(express.json({ limit: '50mb' }))
 
-app.use(cors())
+// allow all cros origin
+
+app.use(cors()) 
 app.options('*', cors())
+
+
+// app.use(cors())
+// app.options('*', cors())
 app.use(cookieParser(env.COOKIE_SECRET))
 app.use(allowedMethods)
 

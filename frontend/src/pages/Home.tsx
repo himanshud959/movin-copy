@@ -1,83 +1,87 @@
-import React, { useState, useEffect } from 'react'
-import { FormControl, Button, Tabs, Tab, Select, MenuItem } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { DateTimeValidationError } from '@mui/x-date-pickers'
-import * as movininTypes from ':movinin-types'
-import { strings as commonStrings } from '../lang/common'
-import * as UserService from '../services/UserService'
-import Layout from '../components/Layout'
-import LocationSelectList from '../components/LocationSelectList'
-import DatePicker from '../components/DatePicker'
-import env from '../config/env.config'
-import HowToBook from '../components/HowToBook'
-import YourPreference from '../components/YourPreference'
-import Services from '../components/Services'
-import WhyOmp from '../components/WhyOmp'
+import React, { useState, useEffect } from 'react';
+import { FormControl, Button, Tabs, Tab, Select, MenuItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { DateTimeValidationError } from '@mui/x-date-pickers';
+import * as movininTypes from ':movinin-types';
+import { strings as commonStrings } from '../lang/common';
+import * as UserService from '../services/UserService';
+import Layout from '../components/Layout';
+import LocationSelectList from '../components/LocationSelectList';
+import DatePicker from '../components/DatePicker';
+import env from '../config/env.config';
+import HowToBook from '../components/HowToBook';
+import YourPreference from '../components/YourPreference';
+import Services from '../components/Services';
+import WhyOmp from '../components/WhyOmp';
+import SecurePayment from '../assets/img/secure-payment.png';
+import '../assets/css/home.css';
 
-import SecurePayment from '../assets/img/secure-payment.png'
-import '../assets/css/home.css'
+interface StateData {
+  locationId: string;
+  from: Date;
+  months?: number | '';
+  to?: Date;
+}
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const _minDate = new Date()
-  _minDate.setDate(_minDate.getDate() + 1)
+  const _minDate = new Date();
+  _minDate.setDate(_minDate.getDate() + 1);
 
-  const [location, setLocation] = useState('')
-  const [from, setFrom] = useState<Date>()
-  const [to, setTo] = useState<Date>()
-  const [months, setMonths] = useState<number | ''>('')
-  const [minDate, setMinDate] = useState<Date>(_minDate)
-  const [maxDate, setMaxDate] = useState<Date>()
-  const [fromError, setFromError] = useState(false)
-  const [toError, setToError] = useState(false)
-  const [monthsError, setMonthsError] = useState(false)
-  const [tabValue, setTabValue] = useState(0)
+  const [location, setLocation] = useState('');
+  const [from, setFrom] = useState<Date>();
+  const [to, setTo] = useState<Date>();
+  const [months, setMonths] = useState<number | ''>('');
+  const [minDate, setMinDate] = useState<Date>(_minDate);
+  const [maxDate, setMaxDate] = useState<Date>();
+  const [fromError, setFromError] = useState(false);
+  const [toError, setToError] = useState(false);
+  const [monthsError, setMonthsError] = useState(false);
+  const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
     if (from) {
-      const __minDate = new Date(from)
-      __minDate.setDate(from.getDate() + 1)
-      setMinDate(__minDate)
+      const __minDate = new Date(from);
+      __minDate.setDate(from.getDate() + 1);
+      setMinDate(__minDate);
     }
-  }, [from])
+  }, [from]);
 
   const handleLocationChange = (values: movininTypes.Option[]) => {
-    const _location = (values.length > 0 && values[0]._id) || ''
-    setLocation(_location)
-  }
+    const _location = (values.length > 0 && values[0]._id) || '';
+    setLocation(_location);
+  };
 
-  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    setTabValue(newValue)
+  const handleTabChange = (_: React.SyntheticEvent, newValue: number) => {
+    setTabValue(newValue);
     // Reset form fields when switching tabs
-    setFrom(undefined)
-    setTo(undefined)
-    setMonths('')
-    setFromError(false)
-    setToError(false)
-    setMonthsError(false)
-  }
+    setFrom(undefined);
+    setTo(undefined);
+    setMonths('');
+    setFromError(false);
+    setToError(false);
+    setMonthsError(false);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    if (!location || !from || fromError || (tabValue === 0 && (monthsError || !months)) || (tabValue === 1 && (toError || !to))) {
-      return
+    if (!location || !from || fromError || 
+        (tabValue === 0 && (monthsError || months === '')) || 
+        (tabValue === 1 && (toError || !to))) {
+      return;
     }
 
-    const stateData = {
+    const stateData: StateData = {
       locationId: location,
       from,
-    }
+      months: tabValue === 0 ? months : undefined,
+      to: tabValue === 1 ? to : undefined,
+    };
 
-    if (tabValue === 0) {
-      stateData['months'] = months
-    } else if (tabValue === 1) {
-      stateData['to'] = to
-    }
-
-    navigate('/search', { state: stateData })
-  }
+    navigate('/search', { state: stateData });
+  };
 
   return (
     <Layout>
@@ -126,21 +130,21 @@ const Home = () => {
                   required
                   onChange={(date) => {
                     if (date) {
-                      const __minDate = new Date(date)
-                      __minDate.setDate(date.getDate() + 1)
-                      setFrom(date)
-                      setMinDate(__minDate)
-                      setFromError(false)
+                      const __minDate = new Date(date);
+                      __minDate.setDate(date.getDate() + 1);
+                      setFrom(date);
+                      setMinDate(__minDate);
+                      setFromError(false);
                     } else {
-                      setFrom(undefined)
-                      setMinDate(_minDate)
+                      setFrom(undefined);
+                      setMinDate(_minDate);
                     }
                   }}
                   onError={(err: DateTimeValidationError) => {
                     if (err) {
-                      setFromError(true)
+                      setFromError(true);
                     } else {
-                      setFromError(false)
+                      setFromError(false);
                     }
                   }}
                   language={UserService.getLanguage()}
@@ -151,8 +155,8 @@ const Home = () => {
                   <Select
                     value={months}
                     onChange={(e) => {
-                      setMonths(e.target.value as number)
-                      setMonthsError(false)
+                      setMonths(e.target.value as number);
+                      setMonthsError(false);
                     }}
                     displayEmpty
                     variant="outlined"
@@ -177,21 +181,21 @@ const Home = () => {
                     required
                     onChange={(date) => {
                       if (date) {
-                        const _maxDate = new Date(date)
-                        _maxDate.setDate(_maxDate.getDate() - 1)
-                        setTo(date)
-                        setMaxDate(_maxDate)
-                        setToError(false)
+                        const _maxDate = new Date(date);
+                        _maxDate.setDate(_maxDate.getDate() - 1);
+                        setTo(date);
+                        setMaxDate(_maxDate);
+                        setToError(false);
                       } else {
-                        setTo(undefined)
-                        setMaxDate(undefined)
+                        setTo(undefined);
+                        setMaxDate(undefined);
                       }
                     }}
                     onError={(err: DateTimeValidationError) => {
                       if (err) {
-                        setToError(true)
+                        setToError(true);
                       } else {
-                        setToError(false)
+                        setToError(false);
                       }
                     }}
                     language={UserService.getLanguage()}
@@ -218,10 +222,10 @@ const Home = () => {
         </footer>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 
 // Old code

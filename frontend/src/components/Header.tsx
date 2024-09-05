@@ -292,39 +292,127 @@ const Header = ({
               </>
             )}
             <>
-              <Drawer open={isSideMenuOpen} onClose={handleSideMenuClose} className="menu">
+              <Drawer
+                open={isSideMenuOpen}
+                onClose={handleSideMenuClose}
+                className="menu"
+                PaperProps={{
+                  sx: {
+                    backgroundColor: '#000041', // Set the drawer background color
+                  },
+                }}
+              >
                 <List sx={classes.list}>
-                  <ListItemLink href="/">
-                    <ListItemIcon><HomeIcon /></ListItemIcon>
-                    <ListItemText primary={strings.HOME} />
+                  <ListItemLink
+                    href="/"
+                    onClick={handleSideMenuClose}
+                    sx={{
+                      '&:hover': {
+                        backgroundColor: '#333366', // Change background on hover
+                      },
+                      '&.Mui-selected': {
+                        backgroundColor: '#333366', // Ensure color stays the same when selected
+                      },
+                    }}
+                  >
+                    <ListItemIcon sx={{ color: '#FFEE00' }}> {/* Set the icon color */}
+                      <HomeIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={strings.HOME} sx={{ color: '#FFEE00' }} /> {/* Set the text color */}
                   </ListItemLink>
                   {isSignedIn && (
-                    <ListItemLink href="/bookings">
-                      <ListItemIcon><BookingsIcon /></ListItemIcon>
-                      <ListItemText primary={strings.BOOKINGS} />
+                    <ListItemLink
+                      href="/bookings"
+                      onClick={handleSideMenuClose}
+                      sx={{
+                        '&:hover': {
+                          backgroundColor: '#333366', // Change background on hover
+                        },
+                        '&.Mui-selected': {
+                          backgroundColor: '#333366', // Ensure color stays the same when selected
+                        },
+                      }}
+                    >
+                      <ListItemIcon sx={{ color: '#FFEE00' }}>
+                        <BookingsIcon />
+                      </ListItemIcon>
+                      <ListItemText primary={strings.BOOKINGS} sx={{ color: '#FFEE00' }} />
                     </ListItemLink>
                   )}
-                  <ListItemLink href="/about">
-                    <ListItemIcon><AboutIcon /></ListItemIcon>
-                    <ListItemText primary={strings.ABOUT} />
+                  <ListItemLink
+                    href="/about"
+                    onClick={handleSideMenuClose}
+                    sx={{
+                      '&:hover': {
+                        backgroundColor: '#333366', // Change background on hover
+                      },
+                      '&.Mui-selected': {
+                        backgroundColor: '#333366', // Ensure color stays the same when selected
+                      },
+                    }}
+                  >
+                    <ListItemIcon sx={{ color: '#FFEE00' }}>
+                      <AboutIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={strings.ABOUT} sx={{ color: '#FFEE00' }} />
                   </ListItemLink>
-                  <ListItemLink href="/tos">
-                    <ListItemIcon><TosIcon /></ListItemIcon>
-                    <ListItemText primary={strings.TOS} />
+                  <ListItemLink
+                    href="/tos"
+                    onClick={handleSideMenuClose}
+                    sx={{
+                      '&:hover': {
+                        backgroundColor: '#333366', // Change background on hover
+                      },
+                      '&.Mui-selected': {
+                        backgroundColor: '#333366', // Ensure color stays the same when selected
+                      },
+                    }}
+                  >
+                    <ListItemIcon sx={{ color: '#FFEE00' }}>
+                      <TosIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={strings.TOS} sx={{ color: '#FFEE00' }} />
                   </ListItemLink>
-                  <ListItemLink href="/contact">
-                    <ListItemIcon><MailIcon /></ListItemIcon>
-                    <ListItemText primary={strings.CONTACT} />
+                  <ListItemLink
+                    href="/contact"
+                    onClick={handleSideMenuClose}
+                    sx={{
+                      '&:hover': {
+                        backgroundColor: '#333366', // Change background on hover
+                      },
+                      '&.Mui-selected': {
+                        backgroundColor: '#333366', // Ensure color stays the same when selected
+                      },
+                    }}
+                  >
+                    <ListItemIcon sx={{ color: '#FFEE00' }}>
+                      <MailIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={strings.CONTACT} sx={{ color: '#FFEE00' }} />
                   </ListItemLink>
                   {env.isMobile() && !hideSignin && !isSignedIn && isLoaded && !loading && (
-                    <ListItemLink href="/sign-in">
-                      <ListItemIcon><LoginIcon /></ListItemIcon>
-                      <ListItemText primary={strings.SIGN_IN} />
+                    <ListItemLink
+                      href="/sign-in"
+                      onClick={handleSideMenuClose}
+                      sx={{
+                        '&:hover': {
+                          backgroundColor: '#333366', // Change background on hover
+                        },
+                        '&.Mui-selected': {
+                          backgroundColor: '#333366', // Ensure color stays the same when selected
+                        },
+                      }}
+                    >
+                      <ListItemIcon sx={{ color: '#FFEE00' }}>
+                        <LoginIcon />
+                      </ListItemIcon>
+                      <ListItemText primary={strings.SIGN_IN} sx={{ color: '#FFEE00' }} />
                     </ListItemLink>
                   )}
                 </List>
               </Drawer>
             </>
+
             <div style={classes.grow} />
             <div className="header-desktop">
               {isSignedIn && (

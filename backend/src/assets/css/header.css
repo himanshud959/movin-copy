@@ -8,6 +8,7 @@
 
 .menu {
   z-index: 1401 !important;
+  
 }
 
 .header-action {
@@ -16,11 +17,18 @@
 
 .header-desktop {
   display: none;
+  background-color: transparent !important; /* Transparent background */
+  color: #FFEE00 !important; /* Dark text color */
 }
 
 .header-mobile {
   display: flex;
   margin-right: -13px;
+}
+
+.header .btn-primary {
+  background-color: transparent !important; /* Transparent background */
+  color: #FFEE00 !important; /* Dark text color */
 }
 
 /* Device width is less than or equal to 960px */

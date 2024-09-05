@@ -1,3 +1,149 @@
-.contact {
-    padding: 15px;
+/* Container for the entire Contact Us page */
+.contact-us-container {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center children horizontally */
+    padding: 20px; /* Padding around the container */
+    gap: 0px; /* Space between elements */
+    background-color: #f4f4f9; /* Light background color */
+}
+
+/* Main heading style */
+.main-heading {
+    font-size: 30px; /* Large font size for emphasis */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the text */
+    margin: 0; /* Reduced space around the heading */
+    color: #000041; /* Dark color */
+    position: relative; /* For positioning during animation */
+    overflow: hidden; /* Hide the text during animation */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: slide-in 1.5s ease-out forwards; /* Apply sliding animation */
+}
+
+
+/* Keyframes for slide-in animation */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%); /* Start from the left */
+    }
+    100% {
+        transform: translateX(0); /* End at the original position */
+    }
+}
+
+/* Image below the heading */
+.contact-image {
+    max-width: 47%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Add vertical space around the image */
+}
+
+
+
+/* Flex container for Registered Address, Customer Care, and Sales Email */
+.contact-row {
+    display: flex; /* Flexbox for row layout */
+    justify-content: space-around; /* Space elements evenly */
+    align-items: flex-start; /* Align to the top */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width for large screens */
+    gap: 20px; /* Space between sections */
+    text-align: center; /* Center the text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Each section (Registered Address, Customer Care, Sales Email) */
+.contact-section {
+    background-color: transparent; /* Remove background color */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+    width: auto; /* Auto width */
+    flex: 1 1 30%; /* Flex item basis with a minimum of 30% width */
+}
+
+/* Headings inside each contact section */
+.contact-section h2 {
+    color: #f2bd1d; /* Dark heading color */
+    margin-bottom: 10px; /* Space below headings */
+    font-size: 24px; /* Font size */
+    font-weight: 600; /* Semi-bold font weight */
+}
+
+/* Paragraphs inside each contact section */
+.contact-section p {
+    color: #0a0a0a;
+    margin: 0; /* Remove default margins */
+    font-size: 16px; /* Font size */
+}
+
+/* Links inside the contact section */
+.contact-section a {
+    color: #0a0a0a; /* Dark color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.contact-section a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Full-screen map section */
+.map-fullscreen {
+    width: 100vw; /* Full viewport width */
+    height: 50vh; /* 50% of the viewport height */
+    margin: 50px 0 0 0; /* Add top margin to create space from the contact details */
+    padding: 0; /* Remove padding */
+    /* position: fixed; Fix position relative to the viewport */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left edge of the viewport */
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.map-fullscreen iframe {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height within the container */
+    border: none; /* Remove iframe border */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .contact-row {
+        gap: 10px; /* Reduce gap on medium screens */
+    }
+    
+    .contact-section {
+        flex: 1 1 45%; /* Flex item basis with a minimum of 45% width */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .contact-section {
+        flex: 1 1 100%; /* Flex item basis with full width */
+        margin-bottom: 20px; /* Add space below each section */
+    }
+    
+    .main-heading {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 20px; /* Further reduce font size for small screens */
+    }
+    
+    .contact-section h2 {
+        font-size: 20px; /* Adjust heading font size */
+    }
+    
+    .contact-section p {
+        font-size: 14px; /* Adjust paragraph font size */
+    }
 }

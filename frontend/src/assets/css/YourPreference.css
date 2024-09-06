@@ -1,8 +1,8 @@
 .your-preference {
-    padding: 40px;
+    padding: 5%;
     background-color: #f9f9f9;
     position: relative;
-    /* max-width: 80%; Ensures the section takes up 80% of the screen width */
+    max-width: 90%; /* Ensure the section takes up most of the screen width */
     margin: 0 auto; /* Centers the section horizontally */
     opacity: 0;
     transform: translateY(-50px); /* Start slightly above the viewport */
@@ -14,7 +14,7 @@
 }
 
 .your-preference h2 {
-    font-size: 28px;
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -34,37 +34,28 @@
     transition: color 0.3s ease; /* Transition for dash lines color */
 }
 
-/* .your-preference h2:hover {
-    color: #FFEE00; 
-}
-
-.your-preference h2:hover::before,
-.your-preference h2:hover::after {
-    color: #FFEE00;
-} */
-
 .your-preference p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Use rem for better scalability */
     text-align: center;
     margin-bottom: 40px;
 }
 
 .preference-options {
     display: flex;
-    justify-content: space-between; /* Distribute space between preferences */
+    justify-content: space-around; /* Center preferences on medium screens */
     flex-wrap: wrap; /* Allow wrapping for responsive design */
+    gap: 20px; /* Space between items */
 }
 
 .preference-option {
-    width: 100%; /* Default to full width on small screens */
-    max-width: 320px; /* Maximum width to prevent overly wide elements */
+    flex: 1 1 calc(33.333% - 40px); /* Three items per row, accounting for gap */
+    max-width: 300px; /* Prevents excessively wide elements */
     text-align: center;
     padding: 20px;
     border: 2px solid transparent; /* Border for hover effect */
     border-radius: 8px; /* Rounded corners */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box; /* Include padding and border in element's total width and height */
-    margin-bottom: 20px; /* Space between preferences */
 }
 
 .preference-option:hover {
@@ -75,7 +66,7 @@
 }
 
 .preference-option h3 {
-    font-size: 20px;
+    font-size: 1.25rem; /* Use rem for responsiveness */
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -106,41 +97,50 @@
 
 /* Media Queries for responsiveness */
 @media (max-width: 1200px) {
-    .preference-options {
-        justify-content: center; /* Center align preferences on medium screens */
+    .preference-option {
+        flex: 1 1 calc(50% - 40px); /* Two items per row */
     }
 }
 
 @media (max-width: 768px) {
     .your-preference {
-        padding: 20px;
+        padding: 10%;
     }
 
     .your-preference h2 {
-        font-size: 24px;
+        font-size: clamp(1.2rem, 3vw, 1.8rem); /* Adjust font size for medium screens */
     }
 
     .your-preference p {
-        font-size: 14px;
+        font-size: 0.9rem; /* Smaller text */
+    }
+
+    .preference-options {
+        justify-content: center; /* Center align preferences on medium screens */
+    }
+
+    .preference-option {
+        flex: 1 1 calc(100% - 40px); /* Single column */
     }
 }
 
 @media (max-width: 480px) {
     .your-preference h2 {
-        font-size: 20px;
+        font-size: 1.2rem; /* Smaller heading size */
     }
 
     .your-preference p {
-        font-size: 12px;
+        font-size: 0.8rem; /* Smaller paragraph size */
     }
 
     .preference-options {
-        flex-direction: column; /* Stack preferences vertically on small screens */
+        flex-direction: column; /* Stack preferences vertically */
         align-items: center; /* Center align preferences */
     }
 
     .preference-option {
-        width: 90%; /* Reduce width for small screens */
-        max-width: none; /* Remove max-width constraint */
+        width: 100%; /* Full width */
+        max-width: 95%; /* Reduce width slightly */
+        margin-bottom: 20px; /* Space between preferences */
     }
 }

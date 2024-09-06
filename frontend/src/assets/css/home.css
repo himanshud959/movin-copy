@@ -53,7 +53,7 @@ div.home div.home-content::before {
   z-index: 1; /* Places the background image behind the content */
 }
 /* Footer styles */
-.footer-copyright {
+/* .footer-copyright {
   text-align: center;
   font-size: 13px;
   color: #FFEE00;
@@ -71,7 +71,7 @@ div.home footer {
   color: #FFEE00;
   border-top: 1px solid #ebebeb;
   z-index: 2; /* Ensures the footer is above the blurred background */
-}
+/* } */
 
 div.home footer div.secure-payment {
   display: none;
@@ -212,6 +212,22 @@ div.home div.home-content div.home-search {
     padding: 12px 0;
   }
 }
+
+.whatsapp-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-logo {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  cursor: pointer;
+}
+
+
+
 
 /* Enhanced styles for larger screens */
 @media only screen and (min-width: 960px) {

@@ -282,133 +282,132 @@ const Header = ({
             </IconButton>
           )}
           <>
-  <Drawer
-    open={isSideMenuOpen}
-    onClose={handleSideMenuClose}
-    className="menu"
-    PaperProps={{
-      sx: {
-        backgroundColor: '#000041', // Set the drawer background color
-      },
-    }}
-  >
-    <List sx={classes.list}>
-      <ListItemLink 
-        href="/" 
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}> {/* Set the icon color */}
-          <DashboardIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.DASHBOARD} sx={{ color: '#FFEE00' }} /> {/* Set the text color */}
-      </ListItemLink>
-      <ListItemLink 
-        href="/agencies"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <AgenciesIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.AGENCIES} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/locations"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <LocationsIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.LOCATIONS} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/properties"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <PropertiesIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.PROPERTIES} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/users"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <UsersIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.USERS} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/about"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <AboutIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.ABOUT} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/tos"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <TosIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.TOS} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-      <ListItemLink 
-        href="/contact"
-        sx={{
-          '&:hover': {
-            backgroundColor: '#333366', // Change background on hover
-          },
-        }}
-        onClick={handleSideMenuClose}
-      >
-        <ListItemIcon sx={{ color: '#FFEE00' }}>
-          <MailIcon />
-        </ListItemIcon>
-        <ListItemText primary={strings.CONTACT} sx={{ color: '#FFEE00' }} />
-      </ListItemLink>
-    </List>
-  </Drawer>
-</>
-
+            <Drawer
+              open={isSideMenuOpen}
+              onClose={handleSideMenuClose}
+              className="menu"
+              PaperProps={{
+                sx: {
+                  backgroundColor: '#000041', // Set the drawer background color
+                },
+              }}
+            >
+              <List sx={classes.list}>
+                <ListItemLink
+                  href="/"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}> {/* Set the icon color */}
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.DASHBOARD} sx={{ color: '#FFEE00' }} /> {/* Set the text color */}
+                </ListItemLink>
+                <ListItemLink
+                  href="/agencies"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <AgenciesIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.AGENCIES} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/locations"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <LocationsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.LOCATIONS} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/properties"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <PropertiesIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.PROPERTIES} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/users"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <UsersIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.USERS} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/about"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <AboutIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.ABOUT} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/tos"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <TosIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.TOS} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+                <ListItemLink
+                  href="/contact"
+                  sx={{
+                    '&:hover': {
+                      backgroundColor: '#333366', // Change background on hover
+                    },
+                  }}
+                  onClick={handleSideMenuClose}
+                >
+                  <ListItemIcon sx={{ color: '#FFEE00' }}>
+                    <MailIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={strings.CONTACT} sx={{ color: '#FFEE00' }} />
+                </ListItemLink>
+              </List>
+            </Drawer>
+          </>
           <div style={classes.grow} />
           <div className="header-desktop">
             {isSignedIn && (

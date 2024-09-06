@@ -13,7 +13,9 @@ import HowToBook from '../components/HowToBook';
 import YourPreference from '../components/YourPreference';
 import Services from '../components/Services';
 import WhyOmp from '../components/WhyOmp';
+import Footerr from '../components/Footerr';
 import SecurePayment from '../assets/img/secure-payment.png';
+import WhatsappLogo from '../assets/img/WhatsApp.png'; // Import the WhatsApp logo
 import '../assets/css/home.css';
 
 interface StateData {
@@ -81,6 +83,10 @@ const Home = () => {
     };
 
     navigate('/search', { state: stateData });
+  };
+
+  const handleWhatsappClick = () => {
+    window.open('https://wa.me/918800118508', '_blank'); // Replace with your WhatsApp number
   };
 
   return (
@@ -212,14 +218,15 @@ const Home = () => {
         <YourPreference />
         <Services />
         <WhyOmp />
-        <footer>
-          <div className="secure-payment">
-            <img src={SecurePayment} alt="Secure Payment" />
-          </div>
-          <div className="footer-copyright">
-            <p>&copy; {new Date().getFullYear()} OH MY PLACE!. All rights reserved.</p>
-          </div>
-        </footer>
+        <Footerr />
+        <div className="whatsapp-contact">
+          <img
+            src={WhatsappLogo}
+            alt="Contact us on WhatsApp"
+            className="whatsapp-logo"
+            onClick={handleWhatsappClick}
+          />
+        </div>
       </div>
     </Layout>
   );

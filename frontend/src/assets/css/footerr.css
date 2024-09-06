@@ -1,0 +1,167 @@
+.footer {
+  background-color: #000041;
+  padding: 20px 100px;
+  /* border-top: 1px solid #FFEE00; */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 20px; /* Space between columns */
+}
+
+.footer-column {
+  flex: 1 1 30%; /* Adjust this value to control the column width */
+  margin: 0 10px; /* Adjust margin to maintain spacing between columns */
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+
+.footer-column ul {
+  display: flex; /* Enable flexbox for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-column ul li {
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin: 0 10px; /* Add horizontal margin for spacing */
+  margin-bottom: 2px; /* Space between list items */
+  position: relative; /* Required for absolute positioning of ::before */
+  padding-left: 30px; /* Space for the > sign and additional padding */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for effects */
+}
+
+.footer-column ul li::before {
+  content: '>'; /* The > sign */
+  position: absolute; /* Absolute positioning to place it before the text */
+  left: 0; /* Align the > sign to the left of the li */
+  color: #FFEE00; /* Color of the > sign, adjust as needed */
+  font-size: 18px; /* Size of the > sign, adjust as needed */
+  top: 50%; /* Center the > sign vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+}
+
+.footer-column ul li:hover {
+  background-color: #1a1a3d; /* Background color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #FFF;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #FFEE00; /* Color change on link hover */
+}
+
+/* Styles for the About, Contact, and Social sections */
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Space between columns */
+  margin-top: 50px;
+  padding: 0 30px;
+}
+
+.footer-about, .footer-contact, .footer-social {
+  flex: 1 1 30%;
+  margin: 0 10px;
+}
+
+.footer-about h3, .footer-contact h3, .footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+
+.footer-about p, .footer-contact p {
+  color: #FFF;
+}
+
+.footer-contact p {
+  margin-bottom: 10px; /* Space between contact details */
+  line-height: 1.6; /* Improve readability */
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 25px; /* Space between social icons */
+  color: #FFF;
+  transition: color 0.3s ease, transform 0.3s ease; /* Add transition for transform */
+}
+
+.footer-social a:hover {
+  color: #FFEE00; /* Color change on hover */
+  transform: scale(1.3); /* Slightly enlarge icon on hover */
+}
+
+.footer-social svg {
+  font-size: 24px;
+  vertical-align: middle; /* Align icon with text if needed */
+  transition: transform 0.9s ease; /* Smooth scaling transition */
+}
+
+.footer-contact a {
+  color: #FFF; /* Contact links color */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #FFEE00; /* Change color on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+
+.footer-notes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background-color: #000041;
+  margin-top: 40px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold; /* Make the text bold */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold; /* Make the links bold */
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+

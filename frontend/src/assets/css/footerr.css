@@ -165,6 +165,7 @@
 }
 
 .footer-links a:hover {
+  color: #FFEE00;
   text-decoration: underline;
 }
 

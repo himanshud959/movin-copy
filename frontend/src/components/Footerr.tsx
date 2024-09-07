@@ -83,8 +83,8 @@ const Footerr: React.FC = () => {
       <div className="footer-notes">
         <p className="footer-copyright">Copyright &copy; {year} OH MY PLACE!. All rights reserved.</p>
         <ul className="footer-links">
-          <li><a href="/terms">Terms and Conditions</a></li>
-          <li><a href="/payment-refund">Payment & Refund Policy</a></li>
+          <li><a href="/tos">Terms of Service</a></li>
+          <li><a href="/payment-refund-policy">Payment & Refund Policy</a></li>
           <li><a href="/privacy-policy">Privacy Policy</a></li>
           <li><a href="/faqs">FAQs</a></li>
           <li><a href="/contact">Contact Us</a></li>

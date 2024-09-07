@@ -18,7 +18,7 @@
     position: relative; /* For positioning during animation */
     overflow: hidden; /* Hide the text during animation */
     white-space: nowrap; /* Prevent text from wrapping */
-    animation: slide-in 1.5s ease-out forwards; /* Apply sliding animation */
+    animation: slide-in 1s ease-out forwards; /* Apply sliding animation */
 }
 
 

@@ -29,6 +29,7 @@ const Contact = lazy(() => import('./pages/Contact'))
 const NoMatch = lazy(() => import('./pages/NoMatch'))
 const PaymentRefundPolicy = lazy(() => import('./pages/PaymentRefundPolicy'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const FAQ = lazy(() => import('./pages/FAQ'))
 
 const App = () => (
   <GlobalProvider>
@@ -56,6 +57,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/payment-refund-policy" element={<PaymentRefundPolicy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/faqs" element={<FAQ />} />
 
             <Route path="*" element={<NoMatch />} />
           </Routes>
